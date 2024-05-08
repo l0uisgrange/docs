@@ -3,9 +3,8 @@ import {Plus_Jakarta_Sans} from "next/font/google"
 import "./globals.css"
 import Icon from "@/components/icons"
 import {SiGithub, SiNpm} from '@icons-pack/react-simple-icons'
+import {text} from "@/fonts"
 import Link from "next/link";
-
-const inter = Plus_Jakarta_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
     title: "Protocol.js",
@@ -17,11 +16,12 @@ export default function RootLayout({children,}: Readonly<{
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.className} dark:bg-black dark:text-white`}>
-                <div className={"border-b dark:border-neutral-800"}>
+            <body className={`${text.className} dark:bg-black dark:text-white`}>
+                <div className={"border-b sticky top-0 dark:border-neutral-800"}>
                     <div className={"hidden max-w-7xl mx-auto gap-4 px-5 py-5 md:flex items-center"}>
-                        <span className={"flex-auto"}>Protocol.js</span>
-                        <a href={"https://github.com/protocoljs/"} className={"hover:opacity-75 transition"}>
+                        <span className={"font-medium mr-20"}>Protocol.js</span>
+                        <Link href={"/docs"}>Documentation</Link>
+                        <a href={"https://github.com/protocoljs/"} className={"hover:opacity-75 transition ml-auto"}>
                             <SiGithub size={25}/>
                         </a>
                         <a href={"https://www.npmjs.com/package/@protocoljs/imap"}
@@ -35,6 +35,7 @@ export default function RootLayout({children,}: Readonly<{
                 </div>
                 <div className={"md:hidden border-b gap-4 px-5 py-5 dark:border-neutral-800 flex items-center"}>
                     <span className={"flex-auto"}>Protocol.js</span>
+                    <Link href={"/docs"}>Documentation</Link>
                     <a href={"https://github.com/protocoljs/"} className={"hover:opacity-75 transition"}>
                         <SiGithub size={25}/>
                     </a>

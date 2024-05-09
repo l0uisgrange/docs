@@ -1,8 +1,9 @@
 import {ReactNode} from "react"
+import {display} from "@/fonts"
 
 export function H1({children}: {children: ReactNode}) {
     return (
-        <h1 className={"font-semibold text-2xl mb-5"}>{children}</h1>
+        <h1 className={`font-extrabold tracking-tight text-5xl ${display.className} mb-5`}>{children}</h1>
     )
 }
 

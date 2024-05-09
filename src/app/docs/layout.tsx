@@ -1,34 +1,19 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "../globals.css"
-import Icon from "@/components/icons"
-
-const inter = Inter({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-    title: "Protocol.js",
-    description: "Fast, lightweight and easy-to-use NPM package to build your own IMAP/SMTP mail server",
-}
-
+import Link from "next/link";
 export default function RootLayout({children,}: Readonly<{
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
-            <body className={`${inter.className} flex items-top text-sm`}>
-                <div className={"w-80 flex-none border-r p-7"}>
-                    <div className={"flex items-center gap-3"}>
-                        <Icon tag={"thread_unread"} className={"text-emerald-500"} />
-                        <span className={"font-semibold text-xl"}>Protocol.js</span>
+        <div className={"grid lg:grid-cols-5 gap-10 max-w-7xl mx-auto px-5 py-20"}>
+            <div className={"col-span-1 hidden lg:block"}>
+                <Link href={"/docs"}>Get started</Link>
+            </div>
+            <div className={"col-span-3"}>
+                {children}
+            </div>
+            <div className={"col-span-1 hidden lg:block"}>
 
-                    </div>
-                </div>
-                <div className={"flex-auto min-h-screen"}>
-                    <div className={"border-b p-5"}>
-                    </div>
-                    {children}
-                </div>
-            </body>
-        </html>
+            </div>
+        </div>
     )
 }

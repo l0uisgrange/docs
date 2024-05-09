@@ -22,16 +22,14 @@ export default function RootLayout({children,}: Readonly<{
                         <Logo className={"w-3 text-red-600"}/>
                         <span className={"font-medium mr-20"}>Protocol.js</span>
                         <Link href={"/docs"}>Documentation</Link>
-                        <a href={"https://github.com/protocoljs/"} className={"hover:opacity-75 transition ml-auto"}>
+                        <span className={"ml-auto font-mono text-sm mr-4"}>v1.0.0-alpha.4</span>
+                        <a href={"https://github.com/protocoljs/"} className={"hover:opacity-75 transition"}>
                             <SiGithub size={25}/>
                         </a>
                         <a href={"https://www.npmjs.com/package/@protocoljs/imap"}
                            className={"hover:opacity-75 transition"}>
                             <SiNpm size={25}/>
                         </a>
-                        <button className={"flex items-center"}>
-                            <Icon tag={"drag_handle"}/>
-                        </button>
                     </div>
                 </div>
                 <div className={"md:hidden border-b gap-4 px-5 py-5 flex items-center"}>
